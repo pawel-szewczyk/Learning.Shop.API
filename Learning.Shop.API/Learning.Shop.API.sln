@@ -7,7 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Shop.API", "Learni
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{0FA12EE6-87B3-4A18-A20E-12A7A18384B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Shop.API.Catalog", "Catalog\Learning.Shop.API.Catalog\Learning.Shop.API.Catalog.csproj", "{B69B7F8F-19AC-4827-8896-9C95F4CD25BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Shop.API.Catalog", "Catalog\Learning.Shop.API.Catalog\Learning.Shop.API.Catalog.csproj", "{B69B7F8F-19AC-4827-8896-9C95F4CD25BC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5701881A-CC3B-415C-99D6-BA3CB8D83F58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elastic", "Elastic", "{868AD1F1-527C-4329-B821-046EE8A163B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Shop.API.Catalog.Elastic", "Catalog\Learning.Shop.API.Catalog.Elastic\Learning.Shop.API.Catalog.Elastic.csproj", "{680A58A5-F67B-4E7A-9661-D2BA7902CBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Shop.API.Catalog.Configuration", "Catalog\Learning.Shop.API.Catalog.Configuration\Learning.Shop.API.Catalog.Configuration.csproj", "{89B7986B-E92D-4C74-B56F-AAF1CF347266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Shop.API.Catalog.Elastic.Abstract", "Catalog\Learning.Shop.API.Catalog.Elastic.Abstract\Learning.Shop.API.Catalog.Elastic.Abstract.csproj", "{583EA44F-D547-42A0-8EA7-CBC76FA57671}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +33,32 @@ Global
 		{B69B7F8F-19AC-4827-8896-9C95F4CD25BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B69B7F8F-19AC-4827-8896-9C95F4CD25BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B69B7F8F-19AC-4827-8896-9C95F4CD25BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5701881A-CC3B-415C-99D6-BA3CB8D83F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5701881A-CC3B-415C-99D6-BA3CB8D83F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5701881A-CC3B-415C-99D6-BA3CB8D83F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5701881A-CC3B-415C-99D6-BA3CB8D83F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680A58A5-F67B-4E7A-9661-D2BA7902CBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680A58A5-F67B-4E7A-9661-D2BA7902CBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680A58A5-F67B-4E7A-9661-D2BA7902CBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680A58A5-F67B-4E7A-9661-D2BA7902CBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B7986B-E92D-4C74-B56F-AAF1CF347266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B7986B-E92D-4C74-B56F-AAF1CF347266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B7986B-E92D-4C74-B56F-AAF1CF347266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B7986B-E92D-4C74-B56F-AAF1CF347266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583EA44F-D547-42A0-8EA7-CBC76FA57671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583EA44F-D547-42A0-8EA7-CBC76FA57671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583EA44F-D547-42A0-8EA7-CBC76FA57671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583EA44F-D547-42A0-8EA7-CBC76FA57671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B69B7F8F-19AC-4827-8896-9C95F4CD25BC} = {0FA12EE6-87B3-4A18-A20E-12A7A18384B2}
+		{868AD1F1-527C-4329-B821-046EE8A163B8} = {0FA12EE6-87B3-4A18-A20E-12A7A18384B2}
+		{680A58A5-F67B-4E7A-9661-D2BA7902CBFA} = {868AD1F1-527C-4329-B821-046EE8A163B8}
+		{89B7986B-E92D-4C74-B56F-AAF1CF347266} = {0FA12EE6-87B3-4A18-A20E-12A7A18384B2}
+		{583EA44F-D547-42A0-8EA7-CBC76FA57671} = {868AD1F1-527C-4329-B821-046EE8A163B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7304884B-85A7-42FE-B350-1BADF859175B}

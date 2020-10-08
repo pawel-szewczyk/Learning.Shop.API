@@ -31,7 +31,7 @@ namespace Learning.Shop.API
                             Version = Version
                         }))
                 .AddControllers()
-                .AddCatalog();
+                .AddCatalog(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +49,7 @@ namespace Learning.Shop.API
                 .UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllers();
+                    endpoints.MapHealthChecks("/livenes");
                 });
         }
     }
