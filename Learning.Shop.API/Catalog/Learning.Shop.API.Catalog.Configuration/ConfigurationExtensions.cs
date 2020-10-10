@@ -8,7 +8,8 @@ namespace Learning.Shop.API.Catalog.Configuration
         public static ElasticsearchOptions GetElasticsearchOptions(
             this IConfiguration configuration)
         {
-            var options = configuration.GetSection(CatalogOptions.SectionName) as CatalogOptions;
+            var options = new CatalogOptions();
+            configuration.GetSection(CatalogOptions.SectionName).Bind(options);
             return options.Elasticsearch;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Learning.Shop.API.Catalog.Configuration;
 using Learning.Shop.API.Catalog.Elastic.Abstract.Documents;
+using Learning.Shop.API.Catalog.Elastic.Abstract.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nest;
@@ -20,7 +21,8 @@ namespace Learning.Shop.API.Catalog.Elastic
                 .DefaultMappingFor<ProductDocument>(c=>c.IdProperty(p=>p.Id));
 
             var client = new ElasticClient(settings);
-            serviceCollection.AddSingleton<IElasticClient>(client);
+            serviceCollection.AddSingleton<IElasticClient>(client)
+                .AddScoped<IProductSearchEngine, ProductSearchEngine>();
             return serviceCollection;
         }
 

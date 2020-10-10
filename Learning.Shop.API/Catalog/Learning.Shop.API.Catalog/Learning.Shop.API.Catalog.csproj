@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Learning.Shop.API.Catalog.Contract\Learning.Shop.API.Catalog.Contract.csproj" />
     <ProjectReference Include="..\Learning.Shop.API.Catalog.Elastic\Learning.Shop.API.Catalog.Elastic.csproj" />
+    <ProjectReference Include="..\Learning.Shop.API.Catalog.Services\Learning.Shop.API.Catalog.Services.csproj" />
   </ItemGroup>
 
 </Project>

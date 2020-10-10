@@ -1,24 +1,15 @@
-﻿using Nest;
-using System;
+﻿using System;
 
-namespace Learning.Shop.API.Catalog.Elastic.Abstract.Documents
+namespace Learning.Shop.API.Catalog.Services.Abstract.Models.Search
 {
-    public class ProductDocument
+    public class Product
     {
         public string Id { get; set; }
-        
-        [Keyword]
         public string Name { get; set; }
-
-        [Text]
         public string Description { get; set; }
-
         public string ImageUrl { get; set; }
-
         public float Rating { get; set; }
-
         public decimal Price { get; set; }
-
         public DateTime CreationDate { get; set; }
     }
 }
