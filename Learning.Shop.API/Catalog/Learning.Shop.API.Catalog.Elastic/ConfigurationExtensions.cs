@@ -1,4 +1,5 @@
 ﻿using Learning.Shop.API.Catalog.Configuration;
+using Learning.Shop.API.Catalog.Configuration.Options;
 using Learning.Shop.API.Catalog.Elastic.Abstract.Documents;
 using Learning.Shop.API.Catalog.Elastic.Abstract.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,8 @@ namespace Learning.Shop.API.Catalog.Elastic
             IConfiguration configuration)
         {
             var elasticsearchConfiguration = configuration.GetElasticsearchOptions();
+            serviceCollection.Configure<ElasticsearchOptions>(
+                o => o = elasticsearchConfiguration);
 
             var settings = new ConnectionSettings(new Uri(elasticsearchConfiguration.Url))
                 .DefaultIndex(elasticsearchConfiguration.Index)
@@ -22,12 +25,35 @@ namespace Learning.Shop.API.Catalog.Elastic
 
             var client = new ElasticClient(settings);
             serviceCollection.AddSingleton<IElasticClient>(client)
-                .AddScoped<IProductSearchEngine, ProductSearchEngine>();
+                .AddScoped<IProductSearchEngine, ProductSearchEngine>()
+                .AddScoped<IProductRepository, ProductRepository>();
             return serviceCollection;
         }
 
         public static IHealthChecksBuilder AddElasticHealthCheck(this IHealthChecksBuilder builder,
             IConfiguration configuration)
             => builder.AddElasticsearch(configuration.GetElasticsearchOptions()?.Url);
+
+        public static IAnalysis AddSearchAnalyzerFor(this AnalysisDescriptor analysis, string indexName)
+        {
+            var indexAnalyzerName = $"{indexName}_search";
+            var indexAnalyzerKey = "lowercase";
+
+            return
+                analysis
+                    .Analyzers(a => a
+                        .Custom(indexAnalyzerName, c => c
+                            .Tokenizer(indexAnalyzerName)
+                            .Filters(indexAnalyzerKey)
+                        )
+                    )
+                    .Tokenizers(t => t
+                        .EdgeNGram(indexAnalyzerName, e => e
+                            .MinGram(1)
+                            .MaxGram(20)
+                            .TokenChars(TokenChar.Letter)
+                        )
+                    );
+        }
     }
 }

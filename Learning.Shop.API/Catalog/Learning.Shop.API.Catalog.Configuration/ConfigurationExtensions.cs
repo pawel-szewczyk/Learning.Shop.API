@@ -1,5 +1,6 @@
 ﻿using Learning.Shop.API.Catalog.Configuration.Options;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Learning.Shop.API.Catalog.Configuration
 {

@@ -1,11 +1,11 @@
-﻿using Learning.Shop.API.Catalog.Elastic.Abstract.Documents;
-using System.Collections.Generic;
+﻿using Learning.Shop.API.Catalog.Elastic.Abstract.Queries;
+using Learning.Shop.API.Catalog.Elastic.Abstract.Results;
 using System.Threading.Tasks;
 
 namespace Learning.Shop.API.Catalog.Elastic.Abstract.Interfaces
 {
     public interface IProductSearchEngine
     {
-        Task<IList<ProductDocument>> Search(); 
+        Task<ProductSearchResult> Search(ProductSearchQuery query); 
     }
 }
